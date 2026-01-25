@@ -28,7 +28,7 @@
 <meta property="og:description" content="搭建这个博客的目的是为了更多地记录一些自己关于这个世界的一点思想和观点。 现在AI可以更加方便整合网络上的资源，快速查找到自己想要的内容。下面是用Chatgpt给出的博客搭建流程。 下面给出 Hexo 的标准安装流程，按“原理 → 环境准备 → 安装 → 初始化 → 常见问题”的逻辑说明，适合第一次使用，也便于你后续查阅或写文档引用。  一、Hexo 是什么（简要）Hexo 是一个基于 Node.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-01-22T13:46:22.000Z">
-<meta property="article:modified_time" content="2026-01-22T13:51:03.000Z">
+<meta property="article:modified_time" content="2026-01-22T13:51:03.381Z">
 <meta property="article:author" content="Zhao-Yi Zhou">
 <meta name="twitter:card" content="summary">
 
@@ -76,6 +76,7 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="ZZY" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -104,6 +105,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -138,11 +140,35 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+      
+    </div>
+  </div>
 
 </div>
     </header>
@@ -336,11 +362,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2026/01/22/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
+    <a href="/2026/01/22/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -483,6 +509,13 @@
 
   
 
+
+
+
+  
+<script src="//cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js"></script>
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js"></script>
+<script src="/js/algolia-search.js"></script>
 
 
 
